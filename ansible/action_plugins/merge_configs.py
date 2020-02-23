@@ -22,7 +22,10 @@ import tempfile
 
 from ansible import constants
 from ansible.plugins import action
-from io import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 from oslo_config import iniparser
 
